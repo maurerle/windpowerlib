@@ -17,7 +17,7 @@ from windpowerlib import (
 )
 
 
-class ModelChain(object):
+class ModelChain:
     r"""Model to determine the output of a wind turbine
 
     The ModelChain class provides a standardized, high-level
