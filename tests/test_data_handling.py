@@ -93,7 +93,7 @@ class TestDataCheck:
         for fn in os.listdir(self.orig_path):
             t[fn] = os.path.getmtime(os.path.join(self.orig_path, fn))
         with caplog.at_level(logging.WARNING):
-            store_turbine_data_from_oedb()
+            store_turbine_data_from_oedb(threshold=1.0)
         for fn in os.listdir(self.orig_path):
             assert t[fn] < os.path.getmtime(os.path.join(self.orig_path, fn))
         assert "The turbine library data contains too many faulty" not in caplog.text
