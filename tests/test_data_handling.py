@@ -151,7 +151,7 @@ class TestDataCheck:
             ConnectionError,
             match=r"Database \(oep\) connection not successful*",
         ):
-            store_turbine_data_from_oedb("wrong_schema")
+            store_turbine_data_from_oedb(table="wrong_table")
 
     @pytest.mark.skip(reason="Use it to check a persistent ssl error")
     def test_wrong_ssl_connection(self):
